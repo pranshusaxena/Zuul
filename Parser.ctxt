@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=class\ Parser
+comment0.text=\nThis\ class\ is\ part\ of\ the\ "World\ of\ Zuul"\ application.\ \n"World\ of\ Zuul"\ is\ a\ very\ simple,\ text\ based\ adventure\ game.\ \ \n\nThis\ parser\ reads\ user\ input\ and\ tries\ to\ interpret\ it\ as\ an\ "Adventure"\ncommand.\ Every\ time\ it\ is\ called\ it\ reads\ a\ line\ from\ the\ terminal\ and\ntries\ to\ interpret\ the\ line\ as\ a\ two\ word\ command.\ It\ returns\ the\ command\nas\ an\ object\ of\ class\ Command.\n\nThe\ parser\ has\ a\ set\ of\ known\ command\ words.\ It\ checks\ user\ input\ against\nthe\ known\ commands,\ and\ if\ the\ input\ is\ not\ one\ of\ the\ known\ commands,\ it\nreturns\ a\ command\ object\ that\ is\ marked\ as\ an\ unknown\ command.\n\n@author\ \ Michael\ Kolling\ and\ David\ J.\ Barnes\n@version\ 2004.12.07\n\n
+comment1.target=reader
+comment2.target=commands
+comment3.params=
+comment3.target=void\ showCommands()
+comment3.text=\nPrint\ out\ a\ list\ of\ valid\ command\ words.\n\n
+comment4.params=
+comment4.target=Parser()
+comment4.text=\nCreate\ a\ Parser\ for\ reading\ user\ input.\n\n
+comment5.params=
+comment5.target=Command\ getCommand()
+comment5.text=\nParse\ the\ next\ user\ command.\n@return\ The\ user's\ command.\n\n
+numComments=6
