@@ -16,21 +16,22 @@ import java.util.Iterator;
  * @version 1.0 (February 2002)
  */
 
-public class Room 
+public class Room
 {
-    private String description;
-    private HashMap<String, Room> exits;        // stores exits of this room.
-
-    /**
-     * Create a room described "description". Initially, it has no exits.
-     * "description" is something like "in a kitchen" or "in an open court 
-     * yard".
-     */
-    public Room(String description) 
-    {
-        this.description = description;
-        exits = new HashMap<String, Room>();
-    }
+private String description;
+private HashMap<String, Room> exits; // stores exits of this room.
+private HashMap<String, Items> items;
+/**
+* Create a room described "description". Initially, it has no exits.
+* "description" is something like "in a kitchen" or "in an open court
+* yard".
+*/
+public Room(String description)
+{
+    this.description = description;
+    exits = new HashMap<String, Room>();
+    items = new HashMap<String, Items>();
+}
 
     /**
      * Define an exit from this room.
@@ -52,11 +53,13 @@ public class Room
     /**
      * Return a long description of this room, in the form:
      *     You are in the kitchen.
-     *     Exits: north west
+
+           *     Exits: north west
+     *     Items: name1,name2.....
      */
     public String getLongDescription()
     {
-        return "You are " + description + ".\n" + getExitString();
+        return "You are " + description + ".\n" + getExitString() + getItems();
     }
 
     /**
@@ -79,6 +82,16 @@ public class Room
     public Room getExit(String direction) 
     {
         return exits.get(direction);
+    }
+    
+    public HashMap<String, Items> getItems()
+    {
+        return items;
+    }
+
+    public void addItem(String name, String description)
+        {
+        items.put(name, new Items(name, description));
     }
 }
 
